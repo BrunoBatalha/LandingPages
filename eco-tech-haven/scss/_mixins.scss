@@ -1,0 +1,15 @@
+@mixin font($fontFamilyMain, $fontSizePx, $lineHeightPx) {
+    font-family: #{$fontFamilyMain},
+    "Roboto",
+    Helvetica;
+    font-size: pxToRemBase16($fontSizePx);
+    line-height: pxToRemBase16($lineHeightPx);
+}
+
+@mixin font-emphasis-16-16 {
+    @include font("Quicksand", 16, 16);
+}
+
+@mixin font-emphasis-96-96 {
+    @include font("Quicksand", 96, 96);
+}

@@ -1,6 +1,66 @@
-@import './normalize.scss';
+@import './normalize';
 @import './variables';
+@import './functions';
+@import './mixins';
+@import './general';
 
-.s{
-    color: $neutral-color-1
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        justify-content: center;
+        align-content: center;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+
+    &__link-item {
+        list-style: none;
+        text-align: center;
+        padding: pxToRemBase16(24) 0;
+    }
+
+    &__link {
+        @include font-emphasis-16-16;
+        color: $neutral-color-2;
+        font-weight: 600;
+        text-decoration: none;
+    }
+}
+
+.intro {
+    background-image: url('../img/intro.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @include font-emphasis-96-96;
+        text-align: center;
+        padding-top: pxToRemBase16(128 + 128);
+        padding-bottom: pxToRemBase16(128 + 128);
+        color: $neutral-color-1;
+        font-weight: 700;
+        letter-spacing: .25rem;
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto pxToRemBase16(64) auto;
+        border-radius: 50%;
+        width: pxToRemBase16(64);
+        height: pxToRemBase16(64);
+        border: pxToRemBase16(2) solid $primary-color-1;
+        background-color: transparent;
+    }
 }

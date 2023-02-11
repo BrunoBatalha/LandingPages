@@ -337,8 +337,74 @@ template {
   display: none;
 }
 
-.s {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  justify-content: center;
+  align-content: center;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.navbar__link-item {
+  list-style: none;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.navbar__link {
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #DADADA;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.intro {
+  background-image: url("../img/intro.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+.intro__title {
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 6rem;
+  line-height: 6rem;
+  text-align: center;
+  padding-top: 16rem;
+  padding-bottom: 16rem;
   color: #F6F6F6;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+}
+.intro__button {
+  display: block;
+  margin: 0 auto 4rem auto;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: 0.125rem solid #44C668;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=styles.css.map */
