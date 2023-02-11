@@ -345,8 +345,18 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-h1 {
+h1,
+h2,
+p {
   margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(180deg, rgb(13, 28, 34) 50%, rgb(7, 22, 28) 100%);
 }
 
 .header {
@@ -357,18 +367,15 @@ h1 {
 }
 
 .navbar__list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  display: flex;
   justify-content: center;
   align-content: center;
-  max-width: 1160px;
   margin: 0 auto;
 }
 .navbar__link-item {
   list-style: none;
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 8rem 1.5rem 0;
 }
 .navbar__link {
   font-family: Quicksand, "Roboto", Helvetica;
@@ -397,14 +404,72 @@ h1 {
   font-weight: 700;
   letter-spacing: 0.25rem;
 }
+.intro__footer {
+  padding-bottom: 4rem;
+  height: 16rem;
+  width: 100%;
+  background: linear-gradient(180deg, transparent 0%, #0D1C22 80%);
+}
 .intro__button {
+  margin: 0 auto;
   display: block;
-  margin: 0 auto 4rem auto;
   border-radius: 50%;
   width: 4rem;
   height: 4rem;
   border: 0.125rem solid #44C668;
   background-color: transparent;
+}
+
+.what-eco {
+  display: grid;
+  grid: auto auto 1fr/1fr 2fr;
+  column-gap: 2.5rem;
+  margin: 0 auto;
+  max-width: 1160px;
+}
+.what-eco__subtitle {
+  color: #F6F6F6;
+  margin: 2.25rem 0;
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+.what-eco__image {
+  grid-area: 1/1/4/1;
+  z-index: 10;
+}
+.what-eco__image > img {
+  max-width: 35rem;
+  border-radius: 0.25rem;
+}
+.what-eco__copy {
+  grid-area: 2/1/2/3;
+  padding: 4rem 0 4rem 35rem;
+  background-color: #203740;
+  color: #8E9FA6;
+  position: relative;
+  font-family: Roboto, "Roboto", Helvetica;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.what-eco__copy > p {
+  margin-left: 2.5rem;
+}
+.what-eco__copy::after, .what-eco__copy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  background-color: #203740;
+}
+.what-eco__copy::after {
+  right: calc(2.5rem * -1);
+  width: 2.5rem;
+}
+.what-eco__copy::before {
+  left: -100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

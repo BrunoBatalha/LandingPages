@@ -6,6 +6,12 @@ body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-h1 {
+h1,
+h2,
+p {
     margin: 0;
+}
+
+ul {
+    padding: 0;
 }

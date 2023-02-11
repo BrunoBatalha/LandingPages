@@ -4,6 +4,9 @@
 @import './mixins';
 @import './general';
 
+body {
+    background: linear-gradient(180deg, rgba(13, 28, 34, 1) 50%, rgba(7, 22, 28, 1) 100%);
+}
 
 .header {
     position: fixed;
@@ -14,24 +17,21 @@
 
 .navbar {
     &__list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
+        display: flex;
         justify-content: center;
         align-content: center;
-        max-width: 1160px;
         margin: 0 auto;
     }
 
     &__link-item {
         list-style: none;
         text-align: center;
-        padding: pxToRemBase16(24) 0;
+        padding: pxToRemBase16(24) pxToRemBase16(128) pxToRemBase16(24) 0;
     }
 
     &__link {
         @include font-emphasis-16-16;
-        color: $neutral-color-2;
+        color: $neutral-color-200;
         font-weight: 600;
         text-decoration: none;
     }
@@ -49,18 +49,83 @@
         text-align: center;
         padding-top: pxToRemBase16(128 + 128);
         padding-bottom: pxToRemBase16(128 + 128);
-        color: $neutral-color-1;
+        color: $neutral-color-100;
         font-weight: 700;
         letter-spacing: .25rem;
     }
 
+    &__footer {
+        padding-bottom: pxToRemBase16(64);
+        height: pxToRemBase16(64 * 4);
+        width: 100%;
+        background: linear-gradient(180deg, transparent 0%, #0D1C22 80%);
+    }
+
     &__button {
+        margin: 0 auto;
         display: block;
-        margin: 0 auto pxToRemBase16(64) auto;
         border-radius: 50%;
         width: pxToRemBase16(64);
         height: pxToRemBase16(64);
-        border: pxToRemBase16(2) solid $primary-color-1;
+        border: pxToRemBase16(2) solid $primary-color-100;
         background-color: transparent;
+    }
+}
+
+.what-eco {
+    display: grid;
+    grid: auto auto 1fr / 1fr 2fr;
+    column-gap: pxToRemBase16(40);
+    margin: 0 auto;
+    @include container;
+
+    &__subtitle {
+        color: $neutral-color-100;
+        margin: pxToRemBase16(36) 0;
+        @include font-emphasis-40-40;
+    }
+
+    &__image {
+        grid-area: 1 / 1 / 4 / 1;
+        z-index: 10;
+
+        &>img {
+            max-width: pxToRemBase16(560);
+            border-radius: pxToRemBase16(4);
+        }
+    }
+
+    &__copy {
+        grid-area: 2 / 1 / 2 / 3;
+        padding: pxToRemBase16(64) 0 pxToRemBase16(64) pxToRemBase16(560);
+        background-color: $secondary-color-300;
+        color: $secondary-color-90;
+        position: relative;
+        @include font-normal-16-32;
+
+        &>p {
+            margin-left: pxToRemBase16(40);
+        }
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            display: block;
+            height: 100%;
+            background-color: $secondary-color-300;
+
+        }
+
+        &::after {
+            right: calc(pxToRemBase16(40) * -1);
+            width: pxToRemBase16(40);
+        }
+
+        &::before {
+            left: calc(100% * -1);
+            width: 100%;
+        }
     }
 }

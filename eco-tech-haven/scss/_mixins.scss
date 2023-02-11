@@ -13,3 +13,15 @@
 @mixin font-emphasis-96-96 {
     @include font("Quicksand", 96, 96);
 }
+
+@mixin font-emphasis-40-40 {
+    @include font("Quicksand", 40, 40);
+}
+
+@mixin font-normal-16-32 {
+    @include font("Roboto", 16, 32);
+}
+
+@mixin container {
+    max-width: 1160px;
+}
