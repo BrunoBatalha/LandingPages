@@ -8,6 +8,11 @@ body {
     background: linear-gradient(180deg, rgba(13, 28, 34, 1) 50%, rgba(7, 22, 28, 1) 100%);
 }
 
+h2 {
+    color: $neutral-color-100;
+    @include font-emphasis-40-40;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -76,22 +81,20 @@ body {
     display: grid;
     grid: auto auto 1fr / 1fr 2fr;
     column-gap: pxToRemBase16(40);
-    margin: 0 auto;
     @include container;
 
     &__subtitle {
-        color: $neutral-color-100;
         margin: pxToRemBase16(36) 0;
-        @include font-emphasis-40-40;
     }
 
     &__image {
         grid-area: 1 / 1 / 4 / 1;
         z-index: 10;
+        @include shadow;
 
         &>img {
             max-width: pxToRemBase16(560);
-            border-radius: pxToRemBase16(4);
+            @include border-rounded;
         }
     }
 
@@ -127,5 +130,85 @@ body {
             left: calc(100% * -1);
             width: 100%;
         }
+    }
+}
+
+.eco-areas {
+    @include container;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-rows: 1fr pxToRemBase16(560);
+    grid-template-columns: repeat(3, pxToRemBase16(340));
+    column-gap: pxToRemBase16(70);
+    row-gap: pxToRemBase16(64);
+
+    &__subtitle {
+        grid-area: 1 / 1 / 1 / 4;
+        text-align: center;
+    }
+
+    &__tag {
+        background-color: $primary-color-100;
+        color: $primary-color-200;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: -2px;
+        padding: pxToRemBase16(8) pxToRemBase16(24) pxToRemBase16(8) pxToRemBase16(12);
+        border-radius: pxToRemBase16(4) 0 0 pxToRemBase16(4);
+        //@include border-rounded;
+        @include set-position(pxToRemBase16(32), null, 0, null);
+        @include font-emphasis-12-20;
+        @include shadow;
+    }
+
+    &__area {
+        position: relative;
+        @include shadow;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 424px;
+            width: 100%;
+            background-color: $secondary-color-300;
+            z-index: -1;
+            @include set-position(null, null, -20px, -20px);
+        }
+
+        &>img {
+            @include border-rounded;
+            min-width: 100%;
+            min-height: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__more {
+        color: $neutral-color-100;
+        //        background: linear-gradient(180deg, transparent 50%, #0D1C22a4 100%);
+        background-color: #0d1c22a4;
+        padding: pxToRemBase16(16);
+        text-align: center;
+        @include set-position(null, 0, 0, 0);
+
+        &>span {
+            font-weight: 600;
+            @include font-emphasis-12-12;
+        }
+
+        // &:hover {
+        //  background: linear-gradient(180deg, transparent 0%, #0d1c22a4 0%);            
+        //  background-color: #0d1c22a4;
+        // }
+
+        &:hover &-content {
+            display: block;
+        }
+    }
+
+    &__more-content {
+        margin-top: pxToRemBase16(32);
+        display: none;
+        @include font-normal-12-20;
     }
 }

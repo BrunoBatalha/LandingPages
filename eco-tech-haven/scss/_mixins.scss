@@ -6,6 +6,14 @@
     line-height: pxToRemBase16($lineHeightPx);
 }
 
+@mixin font-emphasis-12-20 {
+    @include font("Quicksand", 12, 20);
+}
+
+@mixin font-emphasis-12-12 {
+    @include font("Quicksand", 12, 12);
+}
+
 @mixin font-emphasis-16-16 {
     @include font("Quicksand", 16, 16);
 }
@@ -22,6 +30,39 @@
     @include font("Roboto", 16, 32);
 }
 
+@mixin font-normal-12-20 {
+    @include font("Roboto", 12, 20);
+}
+
 @mixin container {
     max-width: 1160px;
+    margin: 0 auto;
+}
+
+@mixin shadow {
+    box-shadow: 1px 1px 2px #04140f80;
+}
+
+@mixin set-position($top, $left, $right, $bottom) {
+    position: absolute;
+
+    @if $top {
+        top: $top;
+    }
+
+    @if $left {
+        left: $left;
+    }
+
+    @if $right {
+        right: $right;
+    }
+
+    @if $bottom {
+        bottom: $bottom;
+    }
+}
+
+@mixin border-rounded {
+    border-radius: pxToRemBase16(4);
 }
