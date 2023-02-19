@@ -18,6 +18,10 @@
     @include font("Quicksand", 16, 16);
 }
 
+@mixin font-emphasis-20-24 {
+    @include font("Quicksand", 20, 24);
+}
+
 @mixin font-emphasis-96-96 {
     @include font("Quicksand", 96, 96);
 }
@@ -32,6 +36,10 @@
 
 @mixin font-normal-12-20 {
     @include font("Roboto", 12, 20);
+}
+
+@mixin font-normal-20-24 {
+    @include font("Roboto", 20, 24);
 }
 
 @mixin container {

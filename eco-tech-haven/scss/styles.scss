@@ -79,6 +79,7 @@ h2 {
 
 .what-eco {
     display: grid;
+    margin-top: pxToRemBase16(64 * 2);
     grid: auto auto 1fr / 1fr 2fr;
     column-gap: pxToRemBase16(40);
     @include container;
@@ -135,7 +136,7 @@ h2 {
 
 .eco-areas {
     @include container;
-    margin-bottom: 100px;
+    margin-top: pxToRemBase16(64 * 2);
     display: grid;
     grid-template-rows: 1fr pxToRemBase16(560);
     grid-template-columns: repeat(3, pxToRemBase16(340));
@@ -210,5 +211,136 @@ h2 {
         margin-top: pxToRemBase16(32);
         display: none;
         @include font-normal-12-20;
+    }
+}
+
+.how-participate {
+    @include container;
+    margin-top: pxToRemBase16(64 * 2);
+
+    &__subtitle {
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        color: $secondary-color-100;
+        letter-spacing: 0.025rem;
+        margin-top: pxToRemBase16(32);
+        @include font-normal-20-24;
+    }
+
+    &__items {
+        margin-top: pxToRemBase16(64);
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        grid-template-rows: repeat(1, minmax(auto, 50px)) 1fr 1fr 1fr repeat(1, minmax(auto, 40px));
+        row-gap: pxToRemBase16(32 + 16);
+    }
+
+    &__item {
+        color: $neutral-color-200;
+        padding-bottom: pxToRemBase16(8);
+        position: relative;
+        height: fit-content;
+        @include font-emphasis-20-24;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: pxToRemBase16(62 + 32);
+            height: pxToRemBase16(4);
+            position: absolute;
+            bottom: -8px;
+            background-color: $primary-color-100;
+            left: 0;
+        }
+
+        &-top-mid {
+            grid-area: 1 / 2 / 1 / 2;
+            justify-self: center;
+            align-self: flex-end;
+        }
+
+        &-bottom-mid {
+            grid-area: 6 / 2 / 6 / 2;
+            justify-self: center;
+        }
+
+        &-top-mid::after,
+        &-bottom-mid::after {
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+
+        &-left {
+
+            &-1,
+            &-2,
+            &-3,
+            &-4 {
+                text-align: right;
+
+                &::after {
+                    right: 0;
+                    left: unset;
+                }
+            }
+
+            &-2,
+            &-3 {
+                margin-right: pxToRemBase16(64);
+            }
+
+            &-1 {
+                grid-area: 2 / 1 / 2 / 1;
+            }
+
+            &-2 {
+                grid-area: 3 / 1 / 3 / 1;
+            }
+
+            &-3 {
+                grid-area: 4 / 1 / 4 / 1;
+            }
+
+            &-4 {
+                grid-area: 5 / 1 / 5 / 1;
+            }
+        }
+
+        &-right {
+
+            &-2,
+            &-3 {
+                margin-left: pxToRemBase16(64);
+            }
+
+            &-1 {
+                grid-area: 2 / 3 / 2 / 3;
+            }
+
+            &-2 {
+                grid-area: 3 / 3 / 3 / 3;
+            }
+
+            &-3 {
+                grid-area: 4 / 3 / 4 / 3;
+            }
+
+            &-4 {
+                grid-area: 5 / 3 / 5 / 3;
+            }
+        }
+    }
+
+    &__item-image {
+        grid-area: 2 / 2 / 6 / 3;
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
     }
 }
