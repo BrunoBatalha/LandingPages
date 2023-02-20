@@ -455,6 +455,7 @@ h2 {
   background: linear-gradient(180deg, transparent 0%, #0D1C22 80%);
 }
 .intro__button {
+  text-align: center;
   margin: 0 auto;
   display: block;
   border-radius: 50%;
