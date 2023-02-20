@@ -196,18 +196,15 @@ h2 {
     &__area {
         position: relative;
         @include shadow;
-
+        
+        $heightDetailsBackgroundCard: 424px;
         &::before,
         &::after {
             content: '';
             display: block;
-            height: 424px;
+            height: $heightDetailsBackgroundCard;
             width: 100%;
             position: absolute;
-        }
-
-        &::after {
-            transform: translate(20px, calc(-100% + 20px));
         }
 
         &::before {
@@ -216,8 +213,16 @@ h2 {
         }
 
         &::after {
+            transform: translate(20px, calc(-100% + 20px));
             background-color: $secondary-color-300;
+            transition: height .25s, width .25s, margin-top .25s;
             z-index: -2;
+        }
+        
+        &:hover:after {
+            height: calc($heightDetailsBackgroundCard - 20px);
+            width: calc(100% - 10px);
+            margin-top: -10px;
         }
 
         &.anime {
@@ -256,10 +261,10 @@ h2 {
 
     &__more {
         color: $neutral-color-100;
-        //        background: linear-gradient(180deg, transparent 50%, #0D1C22a4 100%);
         background-color: #0d1c22a4;
         padding: pxToRemBase16(16);
         text-align: center;
+        cursor: pointer;
         @include set-position(null, 0, 0, 0);
 
         &>span {
@@ -267,19 +272,18 @@ h2 {
             @include font-emphasis-12-12;
         }
 
-        // &:hover {
-        //  background: linear-gradient(180deg, transparent 0%, #0d1c22a4 0%);            
-        //  background-color: #0d1c22a4;
-        // }
-
         &:hover &-content {
-            display: block;
+            height: 250px;
+            margin-top: pxToRemBase16(32);
+            filter: opacity(1);
         }
     }
-
+    
     &__more-content {
-        margin-top: pxToRemBase16(32);
-        display: none;
+        overflow: hidden;
+        height: 0;
+        transition: height .5s;
+        filter: opacity(0);
         @include font-normal-12-20;
     }
 }

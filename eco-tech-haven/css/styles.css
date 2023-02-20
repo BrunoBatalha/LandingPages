@@ -568,9 +568,6 @@ h2 {
   width: 100%;
   position: absolute;
 }
-.eco-areas__area::after {
-  transform: translate(20px, calc(-100% + 20px));
-}
 .eco-areas__area::before {
   position: absolute;
   right: 0px;
@@ -578,8 +575,15 @@ h2 {
   box-shadow: 1px 1px 3px rgba(4, 20, 15, 0.5019607843);
 }
 .eco-areas__area::after {
+  transform: translate(20px, calc(-100% + 20px));
   background-color: #203740;
+  transition: height 0.25s, width 0.25s, margin-top 0.25s;
   z-index: -2;
+}
+.eco-areas__area:hover:after {
+  height: 404px;
+  width: calc(100% - 10px);
+  margin-top: -10px;
 }
 .eco-areas__area.anime:nth-of-type(1) {
   animation: 0.5s ease 0.2s normal both showToUp;
@@ -610,6 +614,7 @@ h2 {
   background-color: rgba(13, 28, 34, 0.6431372549);
   padding: 1rem;
   text-align: center;
+  cursor: pointer;
   position: absolute;
   left: 0;
   right: 0;
@@ -622,11 +627,15 @@ h2 {
   line-height: 0.75rem;
 }
 .eco-areas__more:hover .eco-areas__more-content {
-  display: block;
+  height: 250px;
+  margin-top: 2rem;
+  filter: opacity(1);
 }
 .eco-areas__more-content {
-  margin-top: 2rem;
-  display: none;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s;
+  filter: opacity(0);
   font-family: Roboto, "Roboto", Helvetica;
   font-size: 0.75rem;
   line-height: 1.25rem;
