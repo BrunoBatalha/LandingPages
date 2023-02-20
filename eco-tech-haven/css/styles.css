@@ -347,12 +347,26 @@ body {
 
 h1,
 h2,
+h5,
 p {
   margin: 0;
 }
 
 ul {
   padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 body {
@@ -425,6 +439,15 @@ h2 {
   height: 4rem;
   border: 0.125rem solid #44C668;
   background-color: transparent;
+  padding: 0.75rem;
+}
+.intro__button > span {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.intro__button > span > img {
+  width: 100%;
 }
 
 .what-eco {
@@ -611,15 +634,18 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
 }
-.how-participate__item-left-1, .how-participate__item-left-2, .how-participate__item-left-3, .how-participate__item-left-4 {
+.how-participate__item--align-right {
   text-align: right;
 }
-.how-participate__item-left-1::after, .how-participate__item-left-2::after, .how-participate__item-left-3::after, .how-participate__item-left-4::after {
+.how-participate__item--align-right::after {
   right: 0;
   left: unset;
 }
-.how-participate__item-left-2, .how-participate__item-left-3 {
+.how-participate__item--space-right {
   margin-right: 4rem;
+}
+.how-participate__item--space-left {
+  margin-left: 4rem;
 }
 .how-participate__item-left-1 {
   grid-area: 2/1/2/1;
@@ -632,9 +658,6 @@ h2 {
 }
 .how-participate__item-left-4 {
   grid-area: 5/1/5/1;
-}
-.how-participate__item-right-2, .how-participate__item-right-3 {
-  margin-left: 4rem;
 }
 .how-participate__item-right-1 {
   grid-area: 2/3/2/3;
@@ -654,6 +677,142 @@ h2 {
   border-radius: 50%;
   overflow: hidden;
   width: 100%;
+}
+
+.plans {
+  max-width: 1160px;
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+.plans__subtitle {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.plans__container {
+  display: flex;
+}
+.plans__card-container:first-of-type, .plans__card-container:last-of-type {
+  margin-top: 6rem;
+}
+.plans__card-container ~ .plans__card-container {
+  margin-left: 2.5rem;
+}
+.plans__card {
+  padding: 2rem;
+}
+.plans__card--living {
+  background-color: #F6F6F6;
+}
+.plans__card--living p {
+  color: #383838;
+}
+.plans__card--research {
+  background-color: #2B444E;
+}
+.plans__card--research p {
+  color: #F6F6F6;
+}
+.plans__card--bussiness {
+  background-color: #212A28;
+}
+.plans__card--bussiness p {
+  color: #F6F6F6;
+}
+.plans__card-title {
+  margin-bottom: 2rem;
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+.plans__card-title--living {
+  color: #383838;
+}
+.plans__card-title--research, .plans__card-title--bussiness {
+  color: #F6F6F6;
+}
+.plans__items > li {
+  display: flex;
+  align-items: center;
+}
+.plans__items > li > span {
+  color: #44C668;
+  font-size: 32px;
+}
+.plans__items li ~ li {
+  margin-top: 1.5rem;
+}
+.plans__items p {
+  margin-left: 0.5rem;
+  font-family: Roboto, "Roboto", Helvetica;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+}
+.plans__button {
+  margin-top: 2rem;
+  min-width: 100%;
+  min-height: 2.5rem;
+  background-color: #44C668;
+  color: #114B21;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(4, 20, 15, 0.5019607843);
+}
+
+.footer {
+  background-color: #0D1C22;
+  padding: 4rem;
+  margin-top: 8rem;
+}
+.footer__container {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+}
+.footer__title {
+  color: #F6F6F6;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.footer__logo {
+  flex: 1;
+}
+.footer__logo > div {
+  display: flex;
+  align-items: center;
+}
+.footer__logo > div > span {
+  color: #44C668;
+  font-size: 48px;
+}
+.footer__logo > div > h5 {
+  color: #F6F6F6;
+  margin-left: 2rem;
+  font-family: Quicksand, "Roboto", Helvetica;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+.footer__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.footer__info-item ~ .footer__info-item {
+  margin-top: 1.5rem;
+}
+.footer__socials {
+  margin-top: 2rem;
+  display: flex;
+}
+.footer__socials > li ~ li {
+  margin-left: 2rem;
+}
+.footer__info-item {
+  color: #F6F6F6;
+  font-family: Roboto, "Roboto", Helvetica;
+  font-size: 1rem;
+  line-height: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

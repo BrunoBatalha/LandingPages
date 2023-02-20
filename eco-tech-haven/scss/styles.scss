@@ -74,6 +74,17 @@ h2 {
         height: pxToRemBase16(64);
         border: pxToRemBase16(2) solid $primary-color-100;
         background-color: transparent;
+        padding: pxToRemBase16(12);
+
+        &>span {
+            display: inline-block;
+            width: pxToRemBase16(24);
+            height: pxToRemBase16(24);
+
+            &>img {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -274,25 +285,24 @@ h2 {
 
         }
 
+        &--align-right {
+            text-align: right;
+
+            &::after {
+                right: 0;
+                left: unset;
+            }
+        }
+
+        &--space-right {
+            margin-right: pxToRemBase16(64);
+        }
+
+        &--space-left {
+            margin-left: pxToRemBase16(64);
+        }
 
         &-left {
-
-            &-1,
-            &-2,
-            &-3,
-            &-4 {
-                text-align: right;
-
-                &::after {
-                    right: 0;
-                    left: unset;
-                }
-            }
-
-            &-2,
-            &-3 {
-                margin-right: pxToRemBase16(64);
-            }
 
             &-1 {
                 grid-area: 2 / 1 / 2 / 1;
@@ -311,12 +321,8 @@ h2 {
             }
         }
 
-        &-right {
 
-            &-2,
-            &-3 {
-                margin-left: pxToRemBase16(64);
-            }
+        &-right {
 
             &-1 {
                 grid-area: 2 / 3 / 2 / 3;
@@ -342,5 +348,164 @@ h2 {
         border-radius: 50%;
         overflow: hidden;
         width: 100%;
+    }
+}
+
+.plans {
+    @include container;
+    margin-top: pxToRemBase16(64 * 2);
+
+    &__subtitle {
+        text-align: center;
+        margin-bottom: pxToRemBase16(64);
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__card-container:first-of-type,
+    &__card-container:last-of-type {
+        margin-top: pxToRemBase16(64 + 32)
+    }
+
+    &__card-container~&__card-container {
+        margin-left: pxToRemBase16(40);
+    }
+
+    &__card {
+        padding: pxToRemBase16(32);
+
+        &--living {
+            background-color: $neutral-color-100;
+
+            & p {
+                color: $neutral-color-300;
+            }
+        }
+
+        &--research {
+            background-color: $secondary-color-200;
+
+            & p {
+                color: $neutral-color-100;
+            }
+
+        }
+
+        &--bussiness {
+            background-color: $secondary-color-400;
+
+            & p {
+                color: $neutral-color-100;
+            }
+        }
+    }
+
+    &__card-title {
+        margin-bottom: pxToRemBase16(32);
+        @include font-emphasis-40-40;
+
+        &--living {
+            color: $neutral-color-300;
+        }
+
+        &--research,
+        &--bussiness {
+            color: $neutral-color-100;
+        }
+    }
+
+    &__items {
+        & > li {
+            display: flex;
+            align-items: center;
+            & > span {
+                color: $primary-color-100;
+                font-size: 32px;
+            }
+        }
+
+        & li~li {
+            margin-top: pxToRemBase16(24);
+        }
+
+        & p {
+            margin-left: pxToRemBase16(8);
+            @include font-normal-12-12;
+        }
+    }
+
+    &__button {
+        margin-top: pxToRemBase16(32);
+        min-width: 100%;
+        min-height: pxToRemBase16(40);
+        background-color: $primary-color-100;
+        color: $primary-color-200;
+        border-radius: 5px;
+        @include shadow;
+    }
+}
+
+.footer {
+    background-color: $secondary-color-500;
+    padding: pxToRemBase16(64);
+    margin-top: pxToRemBase16(64 *2);
+
+    &__container {
+        @include container;
+        display: flex;
+    }
+
+    &__title {
+        color: $neutral-color-100;
+        font-weight: bold;
+        margin-bottom: pxToRemBase16(32 + 16);
+        @include font-emphasis-16-16;
+    }
+
+    &__logo {
+        flex: 1;
+
+        &>div {
+            display: flex;
+            align-items: center;
+
+            &>span {
+                color: $primary-color-100;
+                font-size: 48px;
+            }
+
+            &>h5 {
+                color: $neutral-color-100;
+                margin-left: pxToRemBase16(32);
+                @include font-emphasis-32-32;
+            }
+        }
+
+    }
+
+    &__info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info-item~&__info-item {
+        margin-top: pxToRemBase16(24);
+    }
+
+    &__socials {
+        margin-top: pxToRemBase16(32);
+        display: flex;
+
+        &>li~li {
+            margin-left: pxToRemBase16(32);
+        }
+    }
+
+    &__info-item {
+        color: $neutral-color-100;
+        @include font-normal-16-16
     }
 }
