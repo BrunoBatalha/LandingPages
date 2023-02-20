@@ -4,6 +4,8 @@
 
 body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, rgba(13, 28, 34, 1) 50%, rgba(7, 22, 28, 1) 100%);
+    overflow-x: hidden;
 }
 
 h1,
@@ -28,4 +30,9 @@ button {
 
 button:hover {
     cursor: pointer;
+}
+
+h2 {
+    color: $neutral-color-100;
+    @include font-emphasis-40-40;
 }
