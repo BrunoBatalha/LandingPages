@@ -4,6 +4,10 @@
 @import './mixins';
 @import './general';
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(180deg, rgba(13, 28, 34, 1) 50%, rgba(7, 22, 28, 1) 100%);
 }
@@ -13,11 +17,18 @@ h2 {
     @include font-emphasis-40-40;
 }
 
+.anchor {
+    position: relative;
+    top: -100px;
+}
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 20;
+    transition: background-color 500ms;
 }
 
 .navbar {
@@ -39,6 +50,10 @@ h2 {
         color: $neutral-color-200;
         font-weight: 600;
         text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 

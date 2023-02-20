@@ -378,6 +378,10 @@ h2 {
   line-height: 2.5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(180deg, rgb(13, 28, 34) 50%, rgb(7, 22, 28) 100%);
 }
@@ -389,11 +393,18 @@ h2 {
   line-height: 2.5rem;
 }
 
+.anchor {
+  position: relative;
+  top: -100px;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 20;
+  transition: background-color 500ms;
 }
 
 .navbar__list {
@@ -414,6 +425,9 @@ h2 {
   color: #DADADA;
   font-weight: 600;
   text-decoration: none;
+}
+.navbar__link:hover {
+  text-decoration: underline;
 }
 
 .intro {
