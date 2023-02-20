@@ -486,10 +486,12 @@ h2 {
   background-color: #203740;
   color: #8E9FA6;
   position: relative;
-  animation: 1s ease-in-out normal running slideToRight;
   font-family: Roboto, "Roboto", Helvetica;
   font-size: 1rem;
   line-height: 2rem;
+}
+.what-eco__copy.anime {
+  animation: 1s ease-in-out normal running slideToRight;
 }
 .what-eco__copy > p {
   margin-left: 2.5rem;
@@ -543,26 +545,7 @@ h2 {
 }
 .eco-areas__area {
   position: relative;
-  filter: opacity(0);
   box-shadow: 1px 1px 2px rgba(4, 20, 15, 0.5019607843);
-}
-.eco-areas__area:nth-of-type(1) {
-  animation: 0.5s ease 0.2s normal forwards showToUp;
-}
-.eco-areas__area:nth-of-type(1)::after {
-  animation: 0.5s linear 0.2s normal forwards setDetailCardArea;
-}
-.eco-areas__area:nth-of-type(2) {
-  animation: 0.5s ease 0.5s normal forwards showToUp;
-}
-.eco-areas__area:nth-of-type(2)::after {
-  animation: 0.5s linear 0.5s normal forwards setDetailCardArea;
-}
-.eco-areas__area:nth-of-type(3) {
-  animation: 0.5s ease 1s normal forwards showToUp;
-}
-.eco-areas__area:nth-of-type(3)::after {
-  animation: 0.5s linear 1s normal forwards setDetailCardArea;
 }
 .eco-areas__area::before, .eco-areas__area::after {
   content: "";
@@ -570,6 +553,9 @@ h2 {
   height: 424px;
   width: 100%;
   position: absolute;
+}
+.eco-areas__area::after {
+  transform: translate(20px, calc(-100% + 20px));
 }
 .eco-areas__area::before {
   position: absolute;
@@ -580,6 +566,24 @@ h2 {
 .eco-areas__area::after {
   background-color: #203740;
   z-index: -2;
+}
+.eco-areas__area.anime:nth-of-type(1) {
+  animation: 0.5s ease 0.2s normal both showToUp;
+}
+.eco-areas__area.anime:nth-of-type(1)::after {
+  animation: 0.5s linear 0.2s normal both setDetailCardArea;
+}
+.eco-areas__area.anime:nth-of-type(2) {
+  animation: 0.5s ease 0.5s normal both showToUp;
+}
+.eco-areas__area.anime:nth-of-type(2)::after {
+  animation: 0.5s linear 0.5s normal both setDetailCardArea;
+}
+.eco-areas__area.anime:nth-of-type(3) {
+  animation: 0.5s ease 1s normal both showToUp;
+}
+.eco-areas__area.anime:nth-of-type(3)::after {
+  animation: 0.5s linear 1s normal both setDetailCardArea;
 }
 .eco-areas__area > img {
   border-radius: 0.25rem;
@@ -666,11 +670,15 @@ h2 {
   grid-area: 1/2/1/2;
   justify-self: center;
   align-self: flex-end;
+}
+.how-participate__item-top-mid.anime {
   animation: 1s ease-in-out normal both slideToLeft;
 }
 .how-participate__item-bottom-mid {
   grid-area: 6/2/6/2;
   justify-self: center;
+}
+.how-participate__item-bottom-mid.anime {
   animation: 1s ease-in-out normal both slideToRight;
 }
 .how-participate__item-top-mid::after, .how-participate__item-bottom-mid::after {
@@ -692,34 +700,50 @@ h2 {
 }
 .how-participate__item-left-1 {
   grid-area: 2/1/2/1;
+}
+.how-participate__item-left-1.anime {
   animation: 1s ease-in-out normal both slideToRight;
 }
 .how-participate__item-left-2 {
   grid-area: 3/1/3/1;
+}
+.how-participate__item-left-2.anime {
   animation: 1s ease-in-out 0.2s normal both slideToRight;
 }
 .how-participate__item-left-3 {
   grid-area: 4/1/4/1;
+}
+.how-participate__item-left-3.anime {
   animation: 1s ease-in-out 0.4s normal both slideToRight;
 }
 .how-participate__item-left-4 {
   grid-area: 5/1/5/1;
+}
+.how-participate__item-left-4.anime {
   animation: 1s ease-in-out 0.6s normal both slideToRight;
 }
 .how-participate__item-right-1 {
   grid-area: 2/3/2/3;
+}
+.how-participate__item-right-1.anime {
   animation: 1s ease-in-out normal both slideToLeft;
 }
 .how-participate__item-right-2 {
   grid-area: 3/3/3/3;
+}
+.how-participate__item-right-2.anime {
   animation: 1s ease-in-out 0.2s normal both slideToLeft;
 }
 .how-participate__item-right-3 {
   grid-area: 4/3/4/3;
+}
+.how-participate__item-right-3.anime {
   animation: 1s ease-in-out 0.4s normal both slideToLeft;
 }
 .how-participate__item-right-4 {
   grid-area: 5/3/5/3;
+}
+.how-participate__item-right-4.anime {
   animation: 1s ease-in-out 0.6s normal both slideToLeft;
 }
 .how-participate__item-image {
@@ -752,14 +776,18 @@ h2 {
   padding: 2rem;
 }
 .plans__card--living {
-  animation: 0.5s ease 0.2s normal both showToUp;
   background-color: #F6F6F6;
+}
+.plans__card--living.anime {
+  animation: 0.5s ease 0.2s normal both showToUp;
 }
 .plans__card--living p {
   color: #383838;
 }
 .plans__card--research {
   background-color: #2B444E;
+}
+.plans__card--research.anime {
   animation: 0.5s ease 0.5s normal both showToUp;
 }
 .plans__card--research p {
@@ -767,6 +795,8 @@ h2 {
 }
 .plans__card--bussiness {
   background-color: #212A28;
+}
+.plans__card--bussiness.anime {
   animation: 0.5s ease 1s normal both showToUp;
 }
 .plans__card--bussiness p {
