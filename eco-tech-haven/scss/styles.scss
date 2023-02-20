@@ -559,7 +559,18 @@ h2 {
         background-color: $primary-color-100;
         color: $primary-color-200;
         border-radius: 5px;
+        transition: transform 0.25s, box-shadow 0.25s;
         @include shadow;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 1px 3px 3px #04140f80;
+        }
+
+        &:active {
+            transform: translateY(1px);
+            box-shadow: 1px 1px 2px #04140f80;
+        }
     }
 }
 

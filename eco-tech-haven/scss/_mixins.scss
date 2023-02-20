@@ -63,7 +63,7 @@
 }
 
 @mixin shadow {
-    box-shadow: 1px 1px 2px #04140f80;
+    box-shadow: 1px 1px 3px #04140f80;
 }
 
 @mixin set-position($top, $left, $right, $bottom) {
